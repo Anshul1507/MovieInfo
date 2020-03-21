@@ -3,7 +3,7 @@ package com.example.movieinfo.data.vo
 
 import com.google.gson.annotations.SerializedName
 
-data class movie_details(
+data class MovieDetails(
 //    val adult: Boolean,
 //    @SerializedName("backdrop_path")
 //    val backdropPath: String,
