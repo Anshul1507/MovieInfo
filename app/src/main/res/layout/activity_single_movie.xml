@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".movie_details.SingleMovie">
+    tools:context=".single_movie_details.SingleMovie">
 
     <LinearLayout
         android:orientation="vertical"
