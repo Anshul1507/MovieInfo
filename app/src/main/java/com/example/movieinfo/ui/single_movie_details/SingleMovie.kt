@@ -1,8 +1,8 @@
 package com.example.movieinfo.ui.single_movie_details
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_single_movie.*
 import java.text.NumberFormat
 import java.util.*
 
+
 class SingleMovie : AppCompatActivity() {
 
     private lateinit var viewModel: SingleMovieViewModel
@@ -27,6 +28,8 @@ class SingleMovie : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_movie)
 
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val movieId: Int = intent.getIntExtra("movieID",1)
 
@@ -69,5 +72,15 @@ class SingleMovie : AppCompatActivity() {
                 return SingleMovieViewModel(movieRepository,movieId) as T
             }
         })[SingleMovieViewModel::class.java]
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 }

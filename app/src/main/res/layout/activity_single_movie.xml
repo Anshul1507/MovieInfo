@@ -22,9 +22,11 @@
             android:id="@+id/text_error"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:text="Network Problem"
-            android:visibility="gone"/>
+            android:textSize="24sp"
+            android:text="Network Problem!!"
+            android:visibility="gone" />
 
         <ScrollView
             app:layout_constraintTop_toTopOf="parent"
@@ -42,7 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="500dp"
                     android:layout_gravity="center"
-                    android:scaleType="matrix"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/ic_local_movies"/>
 
                 <LinearLayout
@@ -55,24 +57,27 @@
                         android:id="@+id/movie_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="movie"
+                        android:text="Movie"
+                        android:fontFamily="@font/roboto_medium"
                         android:textStyle="bold"
-                        android:textSize="18sp"/>
+                        android:textSize="24sp"/>
 
                     <TextView
                         android:id="@+id/movie_tagline"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="sub title"
+                        android:fontFamily="@font/roboto"
                         android:textStyle="bold"
-                        android:textSize="14sp"/>
+                        android:textSize="18sp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Movie info"
+                        android:fontFamily="@font/roboto_medium"
                         android:textStyle="bold"
-                        android:textSize="14sp"/>
+                        android:textSize="16sp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -83,15 +88,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Release Date:"
+                            android:fontFamily="@font/roboto"
                             android:textStyle="bold"
-                            android:textSize="12sp"/>
+                            android:textSize="14sp"/>
 
                         <TextView
                             android:id="@+id/movie_release_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2019"
-                            android:textSize="12sp"/>
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
 
                     </LinearLayout>
 
@@ -104,15 +111,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Rating: "
+                            android:fontFamily="@font/roboto"
                             android:textStyle="bold"
-                            android:textSize="12sp"/>
+                            android:textSize="14sp"/>
 
                         <TextView
                             android:id="@+id/movie_rating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="0"
-                            android:textSize="12sp"/>
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
 
                     </LinearLayout>
 
@@ -125,15 +134,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Runtime: "
+                            android:fontFamily="@font/roboto"
                             android:textStyle="bold"
-                            android:textSize="12sp"/>
+                            android:textSize="14sp"/>
 
                         <TextView
                             android:id="@+id/movie_runtime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2.3 hr"
-                            android:textSize="12sp"/>
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
 
                     </LinearLayout>
 
@@ -146,15 +157,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Budget: "
+                            android:fontFamily="@font/roboto"
                             android:textStyle="bold"
-                            android:textSize="12sp"/>
+                            android:textSize="14sp"/>
 
                         <TextView
                             android:id="@+id/movie_budget"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="130,000"
-                            android:textSize="12sp"/>
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
 
                     </LinearLayout>
 
@@ -167,15 +180,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Revenue: "
+                            android:fontFamily="@font/roboto"
                             android:textStyle="bold"
-                            android:textSize="12sp"/>
+                            android:textSize="14sp"/>
 
                         <TextView
                             android:id="@+id/movie_revenue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="130,000"
-                            android:textSize="12sp"/>
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
 
                     </LinearLayout>
 
@@ -185,15 +200,17 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Overview "
+                            android:fontFamily="@font/roboto"
                             android:textStyle="bold"
-                            android:textSize="12sp"/>
+                            android:textSize="14sp"/>
 
                         <TextView
                             android:id="@+id/movie_overview"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="overview"
-                            android:textSize="12sp"/>
+                            android:fontFamily="@font/roboto"
+                            android:textSize="14sp"/>
 
                 </LinearLayout>
 
