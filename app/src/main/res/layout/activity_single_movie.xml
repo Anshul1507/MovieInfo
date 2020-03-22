@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".single_movie_details.SingleMovie">
+    tools:context=".ui.single_movie_details.SingleMovie">
 
     <LinearLayout
         android:orientation="vertical"
@@ -38,6 +38,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/image_poster"
                     android:layout_width="match_parent"
                     android:layout_height="500dp"
                     android:layout_gravity="center"
