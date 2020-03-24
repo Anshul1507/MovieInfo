@@ -7,16 +7,16 @@
     tools:context=".ui.single_movie_details.SingleMovie">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <ProgressBar
             android:id="@+id/progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/text_error"
@@ -24,60 +24,182 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:textSize="24sp"
             android:text="Network Problem!!"
+            android:textSize="24sp"
             android:visibility="gone" />
 
         <ScrollView
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="16dp"
+                    >
                 <ImageView
                     android:id="@+id/image_poster"
                     android:layout_width="match_parent"
-                    android:layout_height="500dp"
+                    android:layout_height="400dp"
                     android:layout_gravity="center"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_local_movies"/>
+                    android:src="@drawable/ic_local_movies"
+                    />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:weightSum="3"
+                    android:layout_marginLeft="8dp"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="8dp"
+                    android:baselineAligned="false">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fab_homepage"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            app:maxImageSize="28dp"
+                            android:layout_margin="8dp"
+                            android:scaleType="center"
+                            app:elevation="4dp"
+                            android:src="@drawable/ic_homepage"
+                            app:backgroundTint="@color/colorPrimaryDark"
+                            app:tint="@android:color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Home Page"
+                            android:textSize="14sp"
+                            android:layout_marginTop="-2dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@android:color/darker_gray"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fab_star"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            app:maxImageSize="28dp"
+                            android:layout_margin="8dp"
+                            android:scaleType="centerCrop"
+                            android:paddingBottom="4dp"
+                            app:elevation="4dp"
+                            android:src="@drawable/ic_star"
+                            app:backgroundTint="@color/colorPrimaryDark"
+                            app:tint="@android:color/white" />
+
+                        <TextView
+                            android:id="@+id/movie_rating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3.8"
+                            android:textSize="16sp"
+                            android:layout_marginTop="-2dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@android:color/black"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:id="@+id/fab_trailer"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            app:maxImageSize="28dp"
+                            android:layout_margin="8dp"
+                            android:scaleType="centerCrop"
+                            android:paddingBottom="4dp"
+                            app:elevation="4dp"
+                            android:src="@drawable/ic_youtube_trailer"
+                            app:backgroundTint="@color/colorPrimaryDark"
+                            app:tint="@android:color/white" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Trailer"
+                            android:textSize="14sp"
+                            android:layout_marginTop="-2dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:textColor="@android:color/darker_gray"
+                            android:gravity="center_horizontal"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_margin="8dp">
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/movie_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Movie"
                         android:fontFamily="@font/roboto_medium"
-                        android:textStyle="bold"
-                        android:textSize="24sp"/>
+                        android:text="Movie"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/movie_tagline"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="sub title"
                         android:fontFamily="@font/roboto"
-                        android:textStyle="bold"
-                        android:textSize="18sp"/>
+                        android:text="sub title"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Movie info"
                         android:fontFamily="@font/roboto_medium"
-                        android:textStyle="bold"
-                        android:textSize="16sp"/>
+                        android:text="Movie info"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -87,20 +209,43 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Release Date:"
                             android:fontFamily="@font/roboto"
-                            android:textStyle="bold"
-                            android:textSize="14sp"/>
+                            android:text="Release Date:"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/movie_release_date"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
                             android:text="2019"
-                            android:fontFamily="@font/roboto"
-                            android:textSize="14sp"/>
+                            android:textSize="14sp" />
 
                     </LinearLayout>
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/roboto"-->
+<!--                            android:text="Rating: "-->
+<!--                            android:textSize="14sp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/movie_rating"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:fontFamily="@font/roboto"-->
+<!--                            android:text="0"-->
+<!--                            android:textSize="14sp" />-->
+
+<!--                    </LinearLayout>-->
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -110,41 +255,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rating: "
                             android:fontFamily="@font/roboto"
-                            android:textStyle="bold"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:id="@+id/movie_rating"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="0"
-                            android:fontFamily="@font/roboto"
-                            android:textSize="14sp"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:text="Runtime: "
-                            android:fontFamily="@font/roboto"
-                            android:textStyle="bold"
-                            android:textSize="14sp"/>
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/movie_runtime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="2.3 hr"
                             android:fontFamily="@font/roboto"
-                            android:textSize="14sp"/>
+                            android:text="2.3 hr"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -156,18 +278,18 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Budget: "
                             android:fontFamily="@font/roboto"
-                            android:textStyle="bold"
-                            android:textSize="14sp"/>
+                            android:text="Budget: "
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/movie_budget"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="130,000"
                             android:fontFamily="@font/roboto"
-                            android:textSize="14sp"/>
+                            android:text="130,000"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -179,38 +301,37 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Revenue: "
                             android:fontFamily="@font/roboto"
-                            android:textStyle="bold"
-                            android:textSize="14sp"/>
+                            android:text="Revenue: "
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/movie_revenue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="130,000"
                             android:fontFamily="@font/roboto"
-                            android:textSize="14sp"/>
+                            android:text="130,000"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="Overview "
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Overview "
-                            android:fontFamily="@font/roboto"
-                            android:textStyle="bold"
-                            android:textSize="14sp"/>
-
-                        <TextView
-                            android:id="@+id/movie_overview"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="overview"
-                            android:fontFamily="@font/roboto"
-                            android:textSize="14sp"/>
+                    <TextView
+                        android:id="@+id/movie_overview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="overview"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 

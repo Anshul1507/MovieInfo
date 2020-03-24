@@ -1,6 +1,10 @@
 package com.example.movieinfo.ui.single_movie_details
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -23,6 +27,7 @@ class SingleMovie : AppCompatActivity() {
 
     private lateinit var viewModel: SingleMovieViewModel
     private lateinit var movieRepository: MovieDetailsRepository
+    private lateinit var titleMovie: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,12 +45,24 @@ class SingleMovie : AppCompatActivity() {
 
         viewModel.movieDetails.observe(this, Observer {
             bindUI(it)
+            titleMovie = it.title
         })
 
         viewModel.networkState.observe(this, Observer {
             progress_bar.visibility = if(it == NetworkState.LOADING) View.VISIBLE else View.GONE
             text_error.visibility = if(it == NetworkState.ERROR) View.VISIBLE else View.GONE
         })
+
+        fab_trailer.setOnClickListener {
+            val ytTitle : String = "http://www.youtube.com/results?search_query=${titleMovie}"
+            ytParser(this@SingleMovie,ytTitle)
+        }
+    }
+
+    private fun ytParser(context: Context, id: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(id)
+        startActivity(intent)
     }
 
     private fun bindUI(it: MovieDetails){
