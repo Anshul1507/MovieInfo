@@ -7,15 +7,28 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-const val API_KEY = "910cb471f3326152066529eef1b406b2"
-const val BASE_URL = "https://api.themoviedb.org/3/"
-const val POSTER_BASE_URL = "https://image.tmdb.org/t/p/original/"
+const val TMDB_API_KEY = "910cb471f3326152066529eef1b406b2"
+const val TMDB_BASE_URL = "https://api.themoviedb.org/3/"
+const val TMDB_POSTER_BASE_URL = "https://image.tmdb.org/t/p/original/"
+
+const val OMDB_API_KEY = "4ba05abc";
+const val OMDB_BASE_URL = "http://omdbapi.com/?"
 
 const val FIRST_PAGE = 1
 const val MOVIES_PER_PAGE = 20
-//    https://image.tmdb.org/t/p/original/yFSIUVTCvgYrpalUktulvk3Gi5Y.jpg
-//    https://api.themoviedb.org/3/movie/299534?api_key=910cb471f3326152066529eef1b406b2
-//    https://api.themoviedb.org/3/movie/popular?api_key=910cb471f3326152066529eef1b406b2&page=1
+
+/*
+        TMDB APIs
+        https://image.tmdb.org/t/p/original/yFSIUVTCvgYrpalUktulvk3Gi5Y.jpg
+        https://api.themoviedb.org/3/movie/299534?api_key=910cb471f3326152066529eef1b406b2
+        https://api.themoviedb.org/3/movie/popular?api_key=910cb471f3326152066529eef1b406b2&page=1
+
+        OMDB APIs
+        http://omdbapi.com/?i=tt4154796&apikey=4ba05abc
+        http://www.omdbapi.com/?t=gully+boy&apikey=4ba05abc
+
+
+ */
 
 
 object MovieDBClient {
@@ -26,7 +39,7 @@ object MovieDBClient {
             val url = it .request()
                 .url()
                 .newBuilder()
-                .addQueryParameter("api_key", API_KEY)
+                .addQueryParameter("api_key", TMDB_API_KEY)
                 .build()
 
             val request = it.request()
@@ -44,7 +57,7 @@ object MovieDBClient {
 
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl(BASE_URL)
+            .baseUrl(TMDB_BASE_URL)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()

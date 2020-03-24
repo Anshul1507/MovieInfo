@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.movieinfo.R
 import com.example.movieinfo.data.api.MovieDBClient
 import com.example.movieinfo.data.api.MovieDBInterface
-import com.example.movieinfo.data.api.POSTER_BASE_URL
+import com.example.movieinfo.data.api.TMDB_POSTER_BASE_URL
 import com.example.movieinfo.data.repository.NetworkState
 import com.example.movieinfo.data.vo.MovieDetails
 import kotlinx.android.synthetic.main.activity_single_movie.*
@@ -60,7 +60,7 @@ class SingleMovie : AppCompatActivity() {
         movie_budget.text = formatCurrency.format(it.budget)
         movie_revenue.text = formatCurrency.format(it.revenue)
 
-        val moviePosterURL = POSTER_BASE_URL + it.posterPath
+        val moviePosterURL = TMDB_POSTER_BASE_URL + it.posterPath
         Glide.with(this)
             .load(moviePosterURL)
             .into(image_poster)

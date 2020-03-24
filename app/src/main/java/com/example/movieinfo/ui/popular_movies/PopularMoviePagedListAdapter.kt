@@ -2,7 +2,6 @@ package com.example.movieinfo.ui.popular_movies
 
 import android.content.Context
 import android.content.Intent
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +10,10 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movieinfo.R
-import com.example.movieinfo.data.api.POSTER_BASE_URL
+import com.example.movieinfo.data.api.TMDB_POSTER_BASE_URL
 import com.example.movieinfo.data.repository.NetworkState
 import com.example.movieinfo.data.vo.popular.PopularMovieDetails
 import com.example.movieinfo.ui.single_movie_details.SingleMovie
-import kotlinx.android.synthetic.main.activity_single_movie.view.*
 import kotlinx.android.synthetic.main.item_popular_movies.view.*
 import kotlinx.android.synthetic.main.network_state_item.view.*
 
@@ -67,7 +65,7 @@ class PopularMoviePagedListAdapter(public val context: Context): PagedListAdapte
             itemView.cv_popular_movie_title.text = movie?.title
             itemView.cv_popular_movie_release_date.text = movie?.releaseDate
 
-            val moviePosterURL = POSTER_BASE_URL + movie?.posterPath
+            val moviePosterURL = TMDB_POSTER_BASE_URL + movie?.posterPath
             Glide.with(itemView.context)
                 .load(moviePosterURL)
                 .into(itemView.cv_iv_popular_movie)
