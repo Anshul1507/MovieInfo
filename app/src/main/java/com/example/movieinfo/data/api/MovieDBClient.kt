@@ -11,9 +11,6 @@ const val TMDB_API_KEY = "910cb471f3326152066529eef1b406b2"
 const val TMDB_BASE_URL = "https://api.themoviedb.org/3/"
 const val TMDB_POSTER_BASE_URL = "https://image.tmdb.org/t/p/original/"
 
-const val OMDB_API_KEY = "4ba05abc";
-const val OMDB_BASE_URL = "http://omdbapi.com/?"
-
 const val FIRST_PAGE = 1
 const val MOVIES_PER_PAGE = 20
 
@@ -22,11 +19,6 @@ const val MOVIES_PER_PAGE = 20
         https://image.tmdb.org/t/p/original/yFSIUVTCvgYrpalUktulvk3Gi5Y.jpg
         https://api.themoviedb.org/3/movie/299534?api_key=910cb471f3326152066529eef1b406b2
         https://api.themoviedb.org/3/movie/popular?api_key=910cb471f3326152066529eef1b406b2&page=1
-
-        OMDB APIs
-        http://omdbapi.com/?i=tt4154796&apikey=4ba05abc
-        http://www.omdbapi.com/?t=gully+boy&apikey=4ba05abc
-
 
  */
 
