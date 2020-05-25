@@ -5,3 +5,4 @@ This project app contains the information of any movie like as reviews, popular 
 
 Based on themoviedb.org(TMDB) APIs
 
+Made by [Anshul](https://github.com/Anshul1507/MovieInfo)
