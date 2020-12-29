@@ -17,7 +17,7 @@
 📙 You can visit home page of movie's website in in-app browser\
 📙 Based on themoviedb.org(TMDB) APIs
 
-<!-- You can install the latest apk, [Click Here](Link) <p> -->
+You can install the latest apk, [Click Here](https://github.com/Anshul1507/MovieInfo/releases/download/v1.0/app-debug.apk) <p> 
 
 ---
 
